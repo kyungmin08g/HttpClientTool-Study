@@ -1,3 +1,6 @@
 spring:
   application:
     name: HttpClientTool-Study
+
+open-api:
+  key: ${APP_KEY}
