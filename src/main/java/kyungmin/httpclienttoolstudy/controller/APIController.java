@@ -2,11 +2,13 @@ package kyungmin.httpclienttoolstudy.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kyungmin.httpclienttoolstudy.controller.response.GetSchoolInfoResponse;
 import kyungmin.httpclienttoolstudy.service.APIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,7 +20,7 @@ public class APIController {
 
   @GetMapping(value = "/request")
   @Operation(summary = "학교 조회 API 호출")
-  public ResponseEntity<Void> apiRequest() {
-    return ResponseEntity.ok().build();
+  public ResponseEntity<GetSchoolInfoResponse> apiRequest(@RequestParam("schoolName") String schoolName) {
+    return ResponseEntity.ok(apiService.getApiRequest(schoolName));
   }
 }
