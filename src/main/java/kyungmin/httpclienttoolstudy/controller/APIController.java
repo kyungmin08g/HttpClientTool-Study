@@ -2,6 +2,7 @@ package kyungmin.httpclienttoolstudy.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import kyungmin.httpclienttoolstudy.service.APIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api")
 @Tag(name = "나이스 관련 API")
 public class APIController {
+  private final APIService apiService;
 
   @GetMapping(value = "/request")
   @Operation(summary = "학교 조회 API 호출")
