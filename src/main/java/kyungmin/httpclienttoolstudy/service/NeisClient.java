@@ -14,6 +14,7 @@ public interface NeisClient {
     @RequestParam(value = "KEY") String key,
     @RequestParam(value = "Type") String type,
     @RequestParam(value = "pIndex") int pIndex,
-    @RequestParam(value = "pSize") int pSize
+    @RequestParam(value = "pSize") int pSize,
+    @RequestParam(value = "SCHUL_NM") String schoolName
   );
 }
