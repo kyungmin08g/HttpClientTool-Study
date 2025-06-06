@@ -14,6 +14,6 @@ public class APIService {
   private String appKey;
 
   public GetSchoolInfoResponse getApiRequest(String schoolName) {
-    return neisClient.getSchoolInfo(appKey, "json", 1, 3, schoolName);
+    return neisClient.getSchoolInfo(appKey, "json", 1, 1, schoolName);
   }
 }
