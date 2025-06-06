@@ -8,9 +8,11 @@ import java.util.logging.Level;
 @Configuration
 public class FeignClientConfig {
 
+  /**
+   * 로깅 범위 설정
+   */
   @Bean
   public Level getLogLevel() {
     return Level.ALL;
   }
-
 }

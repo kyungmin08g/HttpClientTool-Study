@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Schema(description = "학교 정보 응답 Row Dto")
+@Schema(description = "학교 정보 응답 Row")
 public class SchoolInfoRow {
   private List<SchoolInfoDto> row;
 }

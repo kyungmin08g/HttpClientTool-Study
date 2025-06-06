@@ -12,6 +12,5 @@ import java.util.List;
 @AllArgsConstructor
 @Schema(description = "학교 정보 조회 응답 객체")
 public class GetSchoolInfoResponse {
-
   private List<SchoolInfoRow> schoolInfo;
 }
