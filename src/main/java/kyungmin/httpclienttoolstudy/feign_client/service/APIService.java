@@ -1,6 +1,6 @@
-package kyungmin.httpclienttoolstudy.service;
+package kyungmin.httpclienttoolstudy.feign_client.service;
 
-import kyungmin.httpclienttoolstudy.controller.response.GetSchoolInfoResponse;
+import kyungmin.httpclienttoolstudy.feign_client.controller.response.GetSchoolInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

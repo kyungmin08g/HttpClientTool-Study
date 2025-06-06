@@ -1,4 +1,4 @@
-package kyungmin.httpclienttoolstudy.controller.response;
+package kyungmin.httpclienttoolstudy.feign_client.controller.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;

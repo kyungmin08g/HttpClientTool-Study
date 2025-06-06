@@ -1,9 +1,9 @@
-package kyungmin.httpclienttoolstudy.controller;
+package kyungmin.httpclienttoolstudy.feign_client.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import kyungmin.httpclienttoolstudy.controller.response.GetSchoolInfoResponse;
-import kyungmin.httpclienttoolstudy.service.APIService;
+import kyungmin.httpclienttoolstudy.feign_client.controller.response.GetSchoolInfoResponse;
+import kyungmin.httpclienttoolstudy.feign_client.service.APIService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

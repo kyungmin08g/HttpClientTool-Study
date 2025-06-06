@@ -1,4 +1,4 @@
-package kyungmin.httpclienttoolstudy.config;
+package kyungmin.httpclienttoolstudy.feign_client.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,7 @@
-package kyungmin.httpclienttoolstudy.service;
+package kyungmin.httpclienttoolstudy.feign_client.service;
 
-import kyungmin.httpclienttoolstudy.config.FeignClientConfig;
-import kyungmin.httpclienttoolstudy.controller.response.GetSchoolInfoResponse;
+import kyungmin.httpclienttoolstudy.feign_client.config.FeignClientConfig;
+import kyungmin.httpclienttoolstudy.feign_client.controller.response.GetSchoolInfoResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
