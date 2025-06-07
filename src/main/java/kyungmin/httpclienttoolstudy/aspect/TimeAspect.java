@@ -6,12 +6,18 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 @Slf4j
 public class TimeAspect {
+
+  @Before("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+  public void beforeLog() {
+    log.info("GetMapping 메서드가 실행됨.");
+  }
 
   @After("execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))")
   public void successLog() {
