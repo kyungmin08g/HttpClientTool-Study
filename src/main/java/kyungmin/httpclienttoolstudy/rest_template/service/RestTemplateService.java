@@ -22,6 +22,7 @@ public class RestTemplateService {
   @Value("${open-api.key}")
   private String appKey;
 
+  // Get
   public JsonNode getApiRequest(String schoolName) {
     URI uri = UriComponentsBuilder
       .fromUriString("https://open.neis.go.kr/hub")
