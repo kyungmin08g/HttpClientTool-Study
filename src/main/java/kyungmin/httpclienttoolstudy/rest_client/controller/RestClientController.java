@@ -1,5 +1,6 @@
 package kyungmin.httpclienttoolstudy.rest_client.controller;
 
+import kyungmin.httpclienttoolstudy.rest_client.service.RestClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping(value = "/rest-client")
 public class RestClientController {
+  private final RestClientService service;
 
   @GetMapping(value = "/request")
   public ResponseEntity<Void> apiRequest(@RequestParam(value = "schoolName") String schoolName) {
