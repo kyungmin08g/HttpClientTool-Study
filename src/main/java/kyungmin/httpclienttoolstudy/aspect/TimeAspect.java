@@ -2,11 +2,9 @@ package kyungmin.httpclienttoolstudy.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -22,6 +20,12 @@ public class TimeAspect {
   @After("execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))")
   public void successLog() {
     log.info("성공적으로 실행되었습니다.");
+  }
+
+  @AfterThrowing(value = "execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))", throwing = "e")
+  public void exceptionLog(JoinPoint joinPoint, RuntimeException e) {
+    System.out.println("메서드 비정상 종료: " + joinPoint.getSignature().getName());
+    e.printStackTrace();
   }
 
   /**
