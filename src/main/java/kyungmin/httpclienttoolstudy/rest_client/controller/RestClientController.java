@@ -1,6 +1,7 @@
 package kyungmin.httpclienttoolstudy.rest_client.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import kyungmin.httpclienttoolstudy.RunTimeLog;
 import kyungmin.httpclienttoolstudy.rest_client.service.RestClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ public class RestClientController {
   private final RestClientService service;
 
   @GetMapping(value = "/request")
+  @RunTimeLog
   public ResponseEntity<JsonNode> apiRequest(@RequestParam(value = "schoolName") String schoolName) throws Exception {
     Thread.sleep(8000);
 //    throw new RuntimeException();
