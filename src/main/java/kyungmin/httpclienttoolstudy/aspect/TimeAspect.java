@@ -66,11 +66,12 @@ public class TimeAspect {
    * | kyungmin.httpclienttoolstudy.rest_client.controller.* : 이 패키지 안에 있는 모든 클래스를 의미
    * | .*(..) : 각 클래스 안에 있는 모든 메서드를 의미이며 (..)는 매개변수가 몇 개든 상관없다는 의미 (0개든 100개든)
    * --------------------------------------------------------------------------------------------
+   * | @annotation(kyungmin.httpclienttoolstudy.RunTimeLog) : 해당 어노텐션이 있는 메서드에만 호출
    *
    * @param joinPoint : 실행하려는 메서드의 정보(제어)?를 담고 있는 친구 | 직접 살행 가능
    * @return : 대상 메서드의 반환 타입과 동일해야하는데 큰 범위인 Object로 설정 -> 대상 메서드의 반환 타입
    */
-  @Around("execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))")
+  @Around("@annotation(kyungmin.httpclienttoolstudy.RunTimeLog)")
   public Object timeAspect(ProceedingJoinPoint joinPoint) {
     StopWatch stopWatch = new StopWatch(); // 스탑워치 준비
     String className = joinPoint.getTarget().getClass().getSimpleName(); // 클래스 이름 얻기
