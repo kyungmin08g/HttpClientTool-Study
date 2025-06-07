@@ -1,5 +1,6 @@
 package kyungmin.httpclienttoolstudy.web_client.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import kyungmin.httpclienttoolstudy.web_client.service.WebClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ public class WebClientController {
   private final WebClientService service;
 
   @GetMapping(value = "/request")
-  public ResponseEntity<Void> apiRequest(@RequestParam(value = "schoolName") String schoolName) {
-    return ResponseEntity.ok().build();
+  public ResponseEntity<JsonNode> apiRequest(@RequestParam(value = "schoolName") String schoolName) {
+    return ResponseEntity.ok(service.getApiRequest(schoolName));
   }
 }
