@@ -3,6 +3,7 @@ package kyungmin.httpclienttoolstudy.aspect;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
@@ -11,6 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class TimeAspect {
+
+  @After("execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))")
+  public void successLog() {
+    log.info("성공적으로 실행되었습니다.");
+  }
 
   /**
    * RestClientController의 메서드 실행 시간을 측정하는 메서드
