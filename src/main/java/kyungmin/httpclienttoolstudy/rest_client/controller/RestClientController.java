@@ -18,7 +18,7 @@ public class RestClientController {
   @GetMapping(value = "/request")
   public ResponseEntity<JsonNode> apiRequest(@RequestParam(value = "schoolName") String schoolName) throws Exception {
     Thread.sleep(8000);
-    throw new RuntimeException();
-//    return ResponseEntity.ok(service.getApiRequest(schoolName));
+//    throw new RuntimeException();
+    return ResponseEntity.ok(service.getApiRequest(schoolName));
   }
 }

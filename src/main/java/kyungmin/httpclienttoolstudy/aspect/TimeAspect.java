@@ -1,10 +1,12 @@
 package kyungmin.httpclienttoolstudy.aspect;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -20,6 +22,13 @@ public class TimeAspect {
   @After("execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))")
   public void successLog() {
     log.info("성공적으로 실행되었습니다.");
+  }
+
+  @AfterReturning(pointcut = "@annotation(org.springframework.web.bind.annotation.GetMapping)", returning = "result")
+  public void successReturning(JoinPoint joinPoint, Object result) {
+    log.info("메서드 실행이 정상적으로 동작하였습니다.");
+    System.out.println("ReturnType: " + result.getClass().getSimpleName());
+    System.out.println("MethodName: " + joinPoint.getSignature().getName());
   }
 
   @AfterThrowing(value = "execution(* kyungmin.httpclienttoolstudy.rest_client.controller.*.*(..))", throwing = "e")
